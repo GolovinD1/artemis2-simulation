@@ -1,0 +1,22 @@
+# VS Studio
+.vs/
+x64/
+Debug/
+Release/
+*.user
+*.aps
+*.suo
+*.pdb
+*.ilk
+*.idb
+*.tlog
+*.log
+*.obj
+*.exe
+
+# Python
+__pycache__/
+*.pyc
+
+# Результаты моделирования
+data/*.csv
