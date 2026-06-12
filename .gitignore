@@ -1,10 +1,20 @@
-# VS Studio
+
+# CMake
+
+build/
+out/
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+Makefile
+cmake_install.cmake
+
+
+# vs studio
+
 .vs/
-x64/
-Debug/
-Release/
+.vscode/
 *.user
-*.aps
 *.suo
 *.pdb
 *.ilk
@@ -14,9 +24,14 @@ Release/
 *.obj
 *.exe
 
-# Python
+
+# Python 
+
 __pycache__/
 *.pyc
+tempCodeRunnerFile.py
+
 
 # Результаты моделирования
+
 data/*.csv

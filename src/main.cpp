@@ -52,10 +52,10 @@ int main() {
 
     try {
         std::cout << "Загрузка Луны...\n";
-        std::vector<State> moon_data = parse_horizons("data/moon.txt");
+        std::vector<State> moon_data = parse_horizons(RESOURCES_PATH "moon.txt");
 
         std::cout << "Загрузка Ориона...\n";
-        std::vector<State> orion_nasa_data = parse_horizons("data/orion.txt");
+        std::vector<State> orion_nasa_data = parse_horizons(RESOURCES_PATH "orion.txt");
 
         if (moon_data.empty() || orion_nasa_data.empty()) return 1;
 
@@ -63,7 +63,7 @@ int main() {
         size_t peak_velocity_index = 0;
         double max_v = 0.0;
 
-        size_t search_limit = orion_nasa_data.size() * 0.75;
+        size_t search_limit = static_cast<size_t>(orion_nasa_data.size() * 0.75);
 
         for (size_t i = 0; i < search_limit; ++i) {
             double current_v = orion_nasa_data[i].velocity.length();

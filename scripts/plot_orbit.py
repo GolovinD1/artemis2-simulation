@@ -5,8 +5,8 @@ from matplotlib.widgets import Button
 from datetime import datetime, timedelta
 
 
-df_sim = pd.read_csv('../data/my_simulation.csv').dropna()
-df_real = pd.read_csv('../data/real_artemis2.csv').dropna()
+df_sim = pd.read_csv('data/my_simulation.csv').dropna()
+df_real = pd.read_csv('data/real_artemis2.csv').dropna()
 
 df_sim = df_sim.iloc[::10].reset_index(drop=True)
 df_real = df_real.iloc[::10].reset_index(drop=True)
@@ -60,8 +60,8 @@ earth2 = plt.Circle((0, 0), 6371, color='dodgerblue', zorder=5)
 moon2 = plt.Circle((0, 0), 1737, color='lightgray', zorder=4)
 ax2.add_patch(earth2)
 ax2.add_patch(moon2)
-tail2, = ax2.plot([], [], color='springgreen', lw=1.5, alpha=0.7, label='След NASA')
-ship2, = ax2.plot([], [], 'o', color='white', markersize=6, zorder=6, label='Орион (Реальный)')
+tail2, = ax2.plot([], [], color='springgreen', lw=1.5, alpha=0.7, label='След NASA (Настоящий)')
+ship2, = ax2.plot([], [], 'o', color='white', markersize=6, zorder=6, label='Орион')
 time_text2 = ax2.text(0.05, 0.95, '', transform=ax2.transAxes, color='white', fontsize=12)
 speed_text2 = ax2.text(0.05, 0.90, '', transform=ax2.transAxes, color='white', fontsize=12)
 ax2.legend(facecolor='black', labelcolor='white', loc='lower left')
