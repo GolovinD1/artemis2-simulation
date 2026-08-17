@@ -1,1 +1,0 @@
-real_date_str = df_real['Date'].iloc[idx2] if 'Date' in df_real.columns else f'Шаг {idx2}'
