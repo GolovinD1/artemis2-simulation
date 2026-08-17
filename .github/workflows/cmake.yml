@@ -2,20 +2,27 @@ name: CMake Build CI
 
 on:
   push:
-    branches: [ "main", "master" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "main", "master" ]
+    branches: [ "main" ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+    - uses: actions/checkout@v4
+
+    - name: Install Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y qtbase5-dev libboost-test-dev cmake g++
 
     - name: Configure CMake
-      run: cmake -B build -DCMAKE_BUILD_TYPE=Release
+      run: cmake -B build -S .
 
     - name: Build
-      run: cmake --build build --config Release
+      run: cmake --build build
+
+    - name: Run Unit Tests
+      run: ./build/artemis_tests
